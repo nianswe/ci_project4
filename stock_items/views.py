@@ -1,6 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
-# Create your views here.
-def stock_items(request):
-    return HttpResponse("Hello there! StockItems")
+
+class StockItems(TemplateView):
+    template_name = 'stock_items/stock_items.html'

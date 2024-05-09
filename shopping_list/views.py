@@ -1,6 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
-# Create your views here.
-def shopping_list(request):
-    return HttpResponse("Hello there! Shopping List Page")
+
+class ShoppingList(TemplateView):
+    template_name = 'shopping_list/shopping_list.html'
