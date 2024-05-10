@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Items</title>
+</head>
+
+<body>
+    <h1>Items and Categories</h1>
+    <div>
+        <h3>Stock Items</h3>
+        {% for stock_items in object_list %}
+            <h2>{{stock_items.item_name}}</h2>
+            <p>ID: {{stock_items.st_id}}</p>
+            <p>Product Name: {{stock_items.product_name}}</p>
+            <p>Categories: {{stock_items.category_name}}</p>
+            <p>Brands: {{stock_items.brands}}</p>
+            <p>Quantity: {{stock_items.quantity}}</p>
+            <p>Barcode#: {{stock_items.code}}</p>
+            <p>Eco Score: {{stock_items.ecoscore_score}}</p>
+            <p>Quantity: {{stock_items.quantity}}</p>
+            <p>Created: {{stock_items.created_on}}</p>
+        {% endfor %}
+    </div>
+    <div>
+        <h3>Stock Items</h3>   
+        {% for categories in object_list %}
+            <h2>{{categories.category_name}}</h2>
+            <p>ID: {{categories.cat_id}}</p>
+            <p>Description: {{categories.category_description}}</p>
+            <p>Created: {{categories.created_on}}</p>
+
+        {% endfor %} 
+    </div>
+</body>
+
+</html>
+  

@@ -5,4 +5,5 @@ from . import views
 urlpatterns =[
     path('', views.StockItems.as_view(), name='stock_items'),
     path('categories/', views.Category.as_view(), name='categories'),
+    
 ]
