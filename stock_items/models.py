@@ -11,20 +11,22 @@ class Category(models.Model):
    category_description = models.CharField(max_length=50, unique=True, null=False)
    slug = models.SlugField(max_length=50, unique=True)
    created_on = models.DateTimeField(auto_now_add=True)
-   cat_id = models.AutoField(primary_key=True)
+   cat_id = models.AutoField(primary_key=True, unique=True, null=False)
+      
    
    def __str__(self):
        # __repr__ to represent itself in the form of a string
        return self.category_name
 
+
 class Stock_Item(models.Model):
     # schema for the StockItem model
     item_name = models.CharField(max_length=50, unique=True, null=False)
-    st_id = models.AutoField(primary_key=True)
+    st_id = models.AutoField(primary_key=True, unique=True, null=False)
     is_picked = models.BooleanField(default=False, null=False)
     product_name = models.CharField(max_length=50, null=True, blank=True)
     slug = models.SlugField(max_length=50, unique=True)
-    category_name = models.ManyToManyField(Category, blank=True)
+    category_name = models.ManyToManyField(Category)
     brands = models.CharField(max_length=50, unique=False, null=True, blank=True)
     quantity = models.CharField(max_length=50, unique=False, null=True)
     code = models.IntegerField(unique=True, null=True, blank=True)
@@ -38,6 +40,3 @@ class Stock_Item(models.Model):
     def __str__(self):
        # __repr__ to represent itself in the form of a string
        return self.item_name
-
-
- 

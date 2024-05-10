@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Views Part 1</title>
+</head>
+
+<body>
+    {% for categories in object_list %}
+        <h2>{{categories.category_name}}</h2>
+        <p>ID: {{categories.cat_id}}</p>
+        <p>Description: {{categories.category_description}}</p>
+        <p>Created: {{categories.created_on}}</p>
+        
+    {% endfor %} 
+</body>
+
+</html>
+    
+    
