@@ -11,9 +11,8 @@ class Category(models.Model):
    category_description = models.CharField(max_length=50, unique=True, null=False)
    slug = models.SlugField(max_length=50, unique=True)
    created_on = models.DateTimeField(auto_now_add=True)
-   cat_id = models.AutoField(primary_key=True, unique=True, null=False)
-      
-   
+   category_name_id = models.AutoField(primary_key=True, unique=True, null=False)
+         
    def __str__(self):
        # __repr__ to represent itself in the form of a string
        return self.category_name
@@ -27,6 +26,7 @@ class Stock_Item(models.Model):
     product_name = models.CharField(max_length=50, null=True, blank=True)
     slug = models.SlugField(max_length=50, unique=True)
     category_name = models.ManyToManyField(Category)
+    # category_name = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     brands = models.CharField(max_length=50, unique=False, null=True, blank=True)
     quantity = models.CharField(max_length=50, unique=False, null=True)
     code = models.IntegerField(unique=True, null=True, blank=True)
